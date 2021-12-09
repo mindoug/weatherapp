@@ -12,8 +12,8 @@ class CurrentViewController: UIViewController {
   var quote = Quote()
   let weatherInfoController = WeatherInfoController()
   
-  var latitude = "33.543682"
-  var longitude = "-86.779633"
+  var latitude = ""
+  var longitude = ""
   var result: String = ""
   
   @IBOutlet weak var latitudeTextField: UITextField!
@@ -42,6 +42,7 @@ class CurrentViewController: UIViewController {
         switch result {
           case .success(let weatherInfo):
             self.updateUI(with: weatherInfo)
+            print("Successfully fetched weatherInfo.")
           case .failure(let error):
             self.displayError(error)
         }

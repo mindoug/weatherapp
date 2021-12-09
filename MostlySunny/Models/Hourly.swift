@@ -10,8 +10,8 @@ import Foundation
 struct Hourly: Codable {
   
   var temp: Double
-  var feelsLike: String
-  var weather: Weather
+  var feelsLike: Double
+  var weather: [Weather]
   var pop: Int
   var humidity: Int
   

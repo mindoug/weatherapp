@@ -15,7 +15,7 @@ struct Current: Codable {
   var feelsLike: Double
   var humidity: Int
   var clouds: Int
-  var weather: Weather
+  var weather: [Weather]
   
   enum CodingKeys: String, CodingKey {
     case feelsLike = "feels_like"

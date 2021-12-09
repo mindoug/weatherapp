@@ -9,11 +9,11 @@ import Foundation
 
 struct DailyTemp: Codable {
   
-  var day: Double = 0.0
-  var min: Double = 0.0
-  var max: Double = 0.0
-  var night: Double = 0.0
-  var eve: Double = 0.0
-  var morn: Double = 0.0
+  var day: Double
+  var min: Double
+  var max: Double
+  var night: Double
+  var eve: Double
+  var morn: Double
   
 }

@@ -15,6 +15,7 @@ class WeatherInfoController {
      urlComponents.queryItems = [
       "lat": lat,
       "lon": lon,
+      "units": "imperial",
       "exclude": "minutely",
       "appid": Secrets.API_key
     ].map { URLQueryItem(name: $0.key, value: $0.value) }
