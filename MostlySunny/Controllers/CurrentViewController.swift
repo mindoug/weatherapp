@@ -12,8 +12,8 @@ class CurrentViewController: UIViewController {
   var quote = Quote()
   let weatherInfoController = WeatherInfoController()
   
-  var latitude = ""
-  var longitude = ""
+  var latitude = "33.543682"
+  var longitude = "-86.779633"
   var result: String = ""
   
   @IBOutlet weak var latitudeTextField: UITextField!

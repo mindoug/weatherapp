@@ -12,7 +12,7 @@ struct Hourly: Codable {
   var temp: Double
   var feelsLike: Double
   var weather: [Weather]
-  var pop: Int
+  var pop: Double
   var humidity: Int
   
   enum CodingKeys: String, CodingKey {
