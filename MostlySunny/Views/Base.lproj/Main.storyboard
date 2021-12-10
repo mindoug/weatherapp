@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d7R-Y8-l4r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -13,17 +13,17 @@
             <objects>
                 <viewController id="8Gh-me-7Ak" customClass="CurrentViewController" customModule="MostlySunny" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2C3-JI-41J">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Awk-3w-10e">
-                                <rect key="frame" x="10" y="54" width="394" height="759"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Awk-3w-10e">
+                                <rect key="frame" x="10" y="10" width="355" height="608"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ERq-zZ-Fjn" userLabel="Top Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="91"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="91"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6Q-fB-12A">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="25"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="SwD-QZ-5uu"/>
                                                 </constraints>
@@ -31,7 +31,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCy-EI-K76">
-                                                <rect key="frame" x="0.0" y="33" width="394" height="25"/>
+                                                <rect key="frame" x="0.0" y="33" width="355" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="7be-p3-GWA"/>
                                                 </constraints>
@@ -39,7 +39,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWl-wW-JHE">
-                                                <rect key="frame" x="162.33333333333334" y="66" width="69.666666666666657" height="25"/>
+                                                <rect key="frame" x="142.5" y="66" width="70" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="B8N-jH-UtU"/>
                                                 </constraints>
@@ -57,25 +57,25 @@
                                             <constraint firstItem="aCy-EI-K76" firstAttribute="leading" secondItem="ERq-zZ-Fjn" secondAttribute="leading" id="pb5-zB-67a"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QaW-53-HtH" userLabel="stack 2">
-                                        <rect key="frame" x="0.0" y="101" width="394" height="398"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QaW-53-HtH" userLabel="stack 2">
+                                        <rect key="frame" x="0.0" y="91" width="355" height="277"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="au6-b3-3Mw" userLabel="horizontal stack">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="323"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="222"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="70°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aL-Zb-Bvi">
-                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="323"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aL-Zb-Bvi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="222"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="76"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hef-11-Imf">
-                                                        <rect key="frame" x="197" y="0.0" width="197" height="323"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hef-11-Imf">
+                                                        <rect key="frame" x="177.5" y="0.0" width="177.5" height="222"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DB4-Ll-BPF">
-                                                <rect key="frame" x="0.0" y="333" width="394" height="25"/>
+                                                <rect key="frame" x="0.0" y="222" width="355" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="EWz-dE-lq1"/>
                                                 </constraints>
@@ -84,7 +84,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm7-hU-uaf" userLabel="Feels like">
-                                                <rect key="frame" x="0.0" y="368" width="394" height="30"/>
+                                                <rect key="frame" x="0.0" y="247" width="355" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="X5j-0q-ca3" userLabel="height = 25"/>
                                                 </constraints>
@@ -98,57 +98,75 @@
                                             <constraint firstAttribute="trailing" secondItem="DB4-Ll-BPF" secondAttribute="trailing" id="kDo-kl-5PH"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hy5-tI-nLV" userLabel="Stack View 3">
-                                        <rect key="frame" x="0.0" y="509" width="394" height="90"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hy5-tI-nLV" userLabel="Stack View 3">
+                                        <rect key="frame" x="0.0" y="368" width="355" height="90"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="aTF-Pd-of8">
-                                                <rect key="frame" x="0.0" y="24.000000000000004" width="124.66666666666667" height="42.333333333333343"/>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="aTF-Pd-of8">
+                                                <rect key="frame" x="0.0" y="15.5" width="118.5" height="59.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="omL-A2-xsp">
-                                                        <rect key="frame" x="0.0" y="0.33333333333333215" width="124.66666666666667" height="19"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="118.5" height="19"/>
                                                         <imageReference key="image" image="cloud" catalog="system" symbolScale="large"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clouds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8z-Cu-UJ7" userLabel="moon">
-                                                        <rect key="frame" x="0.0" y="27.333333333333371" width="124.66666666666667" height="15"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clouds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8z-Cu-UJ7" userLabel="label">
+                                                        <rect key="frame" x="0.0" y="22" width="118.5" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="4AN-Bv-11l"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byd-cH-zgo" userLabel="Clouds Label">
+                                                        <rect key="frame" x="0.0" y="39" width="118.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-zS-teF">
-                                                <rect key="frame" x="134.66666666666666" y="24.000000000000004" width="124.66666666666666" height="42.333333333333343"/>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-zS-teF">
+                                                <rect key="frame" x="118.5" y="15.5" width="118" height="59.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u2P-pf-Vkl">
-                                                        <rect key="frame" x="0.0" y="-4" width="124.66666666666667" height="24"/>
-                                                        <imageReference key="image" image="sunrise" catalog="system" symbolScale="large"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u2P-pf-Vkl" userLabel="Wind">
+                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="21"/>
+                                                        <imageReference key="image" image="wind" catalog="system" symbolScale="large"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K48-wY-hru" userLabel="sunrise">
-                                                        <rect key="frame" x="0.0" y="27.333333333333371" width="124.66666666666667" height="15"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K48-wY-hru" userLabel="Label">
+                                                        <rect key="frame" x="0.0" y="22" width="118" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="Pa0-Qv-q9K"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mph" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rH5-jC-dJC" userLabel="Wind Label">
+                                                        <rect key="frame" x="0.0" y="39" width="118" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="i8v-vO-Erz">
-                                                <rect key="frame" x="269.33333333333331" y="24.000000000000004" width="124.66666666666669" height="42.333333333333343"/>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="i8v-vO-Erz">
+                                                <rect key="frame" x="236.5" y="15.5" width="118.5" height="59.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IBV-qP-DFO">
-                                                        <rect key="frame" x="0.0" y="-4" width="124.66666666666667" height="24"/>
-                                                        <imageReference key="image" image="sunset" catalog="system" symbolScale="large"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IBV-qP-DFO" userLabel="humidity">
+                                                        <rect key="frame" x="0.0" y="0.0" width="118.5" height="21"/>
+                                                        <imageReference key="image" image="humidity" catalog="system" symbolScale="large"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNB-q7-HEF" userLabel="sunset">
-                                                        <rect key="frame" x="0.0" y="27.333333333333371" width="124.66666666666667" height="15"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNB-q7-HEF" userLabel="Label">
+                                                        <rect key="frame" x="0.0" y="22" width="118.5" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="PgD-U5-Ls0"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRu-lj-rlW" userLabel="Humidity Label">
+                                                        <rect key="frame" x="0.0" y="39" width="118.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -161,7 +179,7 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quote" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4G-2q-r2d">
-                                        <rect key="frame" x="0.0" y="609" width="394" height="150"/>
+                                        <rect key="frame" x="0.0" y="458" width="355" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="6pf-Fg-LIk"/>
                                         </constraints>
@@ -170,14 +188,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="hy5-tI-nLV" firstAttribute="top" secondItem="QaW-53-HtH" secondAttribute="bottom" constant="10" id="4Mw-as-Ial"/>
-                                    <constraint firstItem="j4G-2q-r2d" firstAttribute="top" secondItem="hy5-tI-nLV" secondAttribute="bottom" constant="10" id="KJu-iU-4Ep"/>
-                                    <constraint firstItem="hy5-tI-nLV" firstAttribute="top" secondItem="QaW-53-HtH" secondAttribute="bottom" constant="10" id="Ow1-SD-Wzw"/>
-                                    <constraint firstItem="QaW-53-HtH" firstAttribute="top" secondItem="ERq-zZ-Fjn" secondAttribute="bottom" constant="10" id="XgO-C0-FHr"/>
-                                    <constraint firstItem="QaW-53-HtH" firstAttribute="top" secondItem="ERq-zZ-Fjn" secondAttribute="bottom" constant="10" id="vho-ap-OJE"/>
-                                    <constraint firstItem="j4G-2q-r2d" firstAttribute="top" secondItem="hy5-tI-nLV" secondAttribute="bottom" constant="10" id="voA-Ju-oGr"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="88j-6F-th1"/>
@@ -193,18 +203,18 @@
                     <navigationItem key="navigationItem" id="XnQ-0W-pH3"/>
                     <connections>
                         <outlet property="cloudImage" destination="omL-A2-xsp" id="BLf-H9-9Lm"/>
-                        <outlet property="cloudsLabel" destination="l8z-Cu-UJ7" id="WPF-bY-gSc"/>
+                        <outlet property="cloudsLabel" destination="Byd-cH-zgo" id="AQ9-fe-xid"/>
                         <outlet property="currentConditionLabel" destination="DB4-Ll-BPF" id="93b-yb-FFa"/>
                         <outlet property="currentImageView" destination="hef-11-Imf" id="KzL-Ow-KhM"/>
                         <outlet property="currentTempLabel" destination="4aL-Zb-Bvi" id="MfV-MI-Yce"/>
                         <outlet property="feelsLikeLabel" destination="gm7-hU-uaf" id="ZmP-bN-bKl"/>
+                        <outlet property="humidityImage" destination="IBV-qP-DFO" id="z0P-nU-hM7"/>
+                        <outlet property="humidityLabel" destination="kRu-lj-rlW" id="V0g-3S-j6t"/>
                         <outlet property="latitudeTextField" destination="t6Q-fB-12A" id="qqv-p2-mJi"/>
                         <outlet property="longitudeTextField" destination="aCy-EI-K76" id="rCc-n5-hZq"/>
                         <outlet property="quoteLabel" destination="j4G-2q-r2d" id="dbv-SB-n2h"/>
-                        <outlet property="sunriseImage" destination="u2P-pf-Vkl" id="mol-qf-134"/>
-                        <outlet property="sunriseLabel" destination="K48-wY-hru" id="mR6-JP-o8W"/>
-                        <outlet property="sunsetImage" destination="IBV-qP-DFO" id="8FA-Xp-ye9"/>
-                        <outlet property="sunsetLabel" destination="MNB-q7-HEF" id="MwF-ow-qDQ"/>
+                        <outlet property="windImage" destination="u2P-pf-Vkl" id="ZqP-xG-fB5"/>
+                        <outlet property="windLabel" destination="rH5-jC-dJC" id="eag-BK-vII"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rb-pg-ph3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -234,8 +244,7 @@
     <resources>
         <image name="cloud" catalog="system" width="128" height="88"/>
         <image name="cloud.sun" catalog="system" width="128" height="95"/>
-        <image name="sun.max" catalog="system" width="128" height="124"/>
-        <image name="sunrise" catalog="system" width="128" height="97"/>
-        <image name="sunset" catalog="system" width="128" height="97"/>
+        <image name="humidity" catalog="system" width="128" height="98"/>
+        <image name="wind" catalog="system" width="128" height="103"/>
     </resources>
 </document>
