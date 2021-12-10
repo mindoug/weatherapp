@@ -37,38 +37,45 @@ class CurrentViewController: UIViewController {
   
   override func viewDidLoad() {
         super.viewDidLoad()
-      
+        updateUI()
+  }
+  
+  func updateUI() {
     weatherInfoController.fetchWeatherInfo(lat: latitude, lon: longitude, completion: {(result) in
       DispatchQueue.main.async {
         switch result {
           case .success(let weatherInfo):
-            self.updateUI(with: weatherInfo)
-            print("Successfully fetched weatherInfo. Current temperature in Hoover, AL is \(weatherInfo.current.temp).")
+            
+            let temp = String(format: "%.0f", weatherInfo.current.temp)
+            self.currentTempLabel.text = temp + "°"
+              
+              let imageName = weatherInfo.current.weather[0].weatherImage
+            self.currentImageView.image = UIImage(systemName: imageName)
+              
+            self.currentConditionLabel.text = weatherInfo.current.weather[0].main
+              
+              let feels = String(weatherInfo.current.feelsLike)
+            self.feelsLikeLabel.text = "Feels like \(feels)°"
+              
+            self.cloudsLabel.text = String(weatherInfo.current.clouds) + "%"
+              
+            self.windLabel.text = String(weatherInfo.current.windSpeed) + "mph"
+              
+            self.humidityLabel.text = String(weatherInfo.current.humidity) + "%"
+
           case .failure(let error):
-            self.displayError(error)
+            print(error)
         }
       }
     })
   }
-  func updateUI(with weatherInfo: WeatherInfo) {
-
-    let temp = String(format: "%.0f", weatherInfo.current.temp)
-    currentTempLabel.text = temp + "°"
+  
+  func saveWeather() {
     
-    let imageName = weatherInfo.current.weather[0].weatherImage
-    currentImageView.image = UIImage(systemName: imageName)
-    
-    currentConditionLabel.text = weatherInfo.current.weather[0].main
-    
-    let feels = String(weatherInfo.current.feelsLike)
-    feelsLikeLabel.text = "Feels like \(feels)°"
-    
-    cloudsLabel.text = String(weatherInfo.current.clouds) + "%"
-    
-    windLabel.text = String(weatherInfo.current.windSpeed) + "mph"
-    
-    humidityLabel.text = String(weatherInfo.current.humidity) + "%"
-
+  }
+  
+  func loadWeather() {
+    // load data from the disk and assign it to the weather property
   }
   
   func displayError(_ error: Error) {
@@ -76,26 +83,21 @@ class CurrentViewController: UIViewController {
   }
     
   @IBAction func submitButton(_ sender: Any) {
-    
     latitude = latitudeTextField.text ?? "33.543682"
     longitude = longitudeTextField.text ?? "-86.779633"
-   
-    
-    print("The latitude is: \(String(describing: latitudeTextField.text))" )
-    print("The longitude is: \(String(describing: longitudeTextField.text))" )
-      
+    updateUI()
   }
   
   
   
-    /*
+   
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
+  
+  
+  
+  
 
 }

@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -199,7 +200,10 @@
                             <constraint firstItem="88j-6F-th1" firstAttribute="bottom" secondItem="Awk-3w-10e" secondAttribute="bottom" id="sIp-Bs-jNK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Current" image="cloud.sun" catalog="system" selectedImage="cloud.sun" id="ZNj-TK-JeD"/>
+                    <tabBarItem key="tabBarItem" title="Current" image="cloud.sun" catalog="system" id="ZNj-TK-JeD">
+                        <color key="badgeColor" systemColor="tintColor"/>
+                        <imageReference key="selectedImage" image="cloud.sun" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="XnQ-0W-pH3"/>
                     <connections>
                         <outlet property="cloudImage" destination="omL-A2-xsp" id="BLf-H9-9Lm"/>
@@ -219,7 +223,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rb-pg-ph3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698.125" y="52.5"/>
+            <point key="canvasLocation" x="2535" y="53"/>
+        </scene>
+        <!--Daily-->
+        <scene sceneID="Ya5-7y-f9X">
+            <objects>
+                <tableViewController id="Y4d-zy-Mt0" userLabel="Daily" customClass="DailyTableViewController" customModule="MostlySunny" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dwe-b5-nuw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="daily" id="ogH-Dv-k3X">
+                                <rect key="frame" x="0.0" y="44.5" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ogH-Dv-k3X" id="3Sx-Bs-ngg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Y4d-zy-Mt0" id="07h-DV-J8d"/>
+                            <outlet property="delegate" destination="Y4d-zy-Mt0" id="a2D-xE-p7k"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Daily" image="calendar" catalog="system" id="XuT-0G-ybj">
+                        <color key="badgeColor" systemColor="tintColor"/>
+                        <imageReference key="selectedImage" image="calendar" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yac-F1-fUF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3926" y="53"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="KEB-nY-Keo">
@@ -242,9 +278,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="cloud" catalog="system" width="128" height="88"/>
         <image name="cloud.sun" catalog="system" width="128" height="95"/>
         <image name="humidity" catalog="system" width="128" height="98"/>
         <image name="wind" catalog="system" width="128" height="103"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
