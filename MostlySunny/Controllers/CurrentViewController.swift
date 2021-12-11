@@ -54,12 +54,13 @@ class CurrentViewController: UIViewController {
               
             self.currentConditionLabel.text = weatherInfo.current.weather[0].main
               
-              let feels = String(weatherInfo.current.feelsLike)
+              let feels = String(format: "%.0f",weatherInfo.current.feelsLike)
             self.feelsLikeLabel.text = "Feels like \(feels)°"
               
             self.cloudsLabel.text = String(weatherInfo.current.clouds) + "%"
               
-            self.windLabel.text = String(weatherInfo.current.windSpeed) + "mph"
+            let wind = String(format: "%.0f", weatherInfo.current.windSpeed)
+            self.windLabel.text = String(wind) + " mph"
               
             self.humidityLabel.text = String(weatherInfo.current.humidity) + "%"
 
