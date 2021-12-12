@@ -32,6 +32,7 @@ class CurrentViewController: UIViewController {
   @IBOutlet weak var quoteLabel: UILabel!
   @IBOutlet weak var segmentedControl: UISegmentedControl!
   @IBOutlet weak var segmentedTableView: UITableView!
+  @IBOutlet weak var backgroundImageView: UIImageView!
   
   let dailyCellID = "DailyCell"
   let hourlyCellID = "HourlyCell"
@@ -64,6 +65,8 @@ class CurrentViewController: UIViewController {
         switch result {
           case .success(let weatherInfo):
             self.weatherInfo = weatherInfo
+            
+            self.backgroundImageView.image = UIImage(named: weatherInfo.current.weather[0].background)
             
             let temp = String(format: "%.0f", weatherInfo.current.temp)
             self.currentTempLabel.text = temp + "°"

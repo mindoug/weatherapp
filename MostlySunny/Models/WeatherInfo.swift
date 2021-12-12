@@ -19,5 +19,3 @@ struct WeatherInfo: Codable {
 }
 
 
-// let image = UIImage(systemName: "")
-// let imageView = UIImageView(image: image)

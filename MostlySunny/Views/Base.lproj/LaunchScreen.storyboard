@@ -15,16 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="jZj-XM-tTo">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jZj-XM-tTo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BcA-jO-fuh"/>
+                            <constraint firstAttribute="trailing" secondItem="jZj-XM-tTo" secondAttribute="trailing" id="C09-HR-6FX"/>
+                            <constraint firstItem="jZj-XM-tTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="n65-xS-XVh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jZj-XM-tTo" secondAttribute="bottom" id="nEl-om-LRo"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="323" y="241"/>
         </scene>
     </scenes>
     <resources>
+        <image name="sky" width="1783" height="3858"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
