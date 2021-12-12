@@ -28,6 +28,7 @@
 		72780DCD27651F7E0004F416 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72780DCB27651F7E0004F416 /* DailyTableViewCell.swift */; };
 		72780DCE27651F7E0004F416 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72780DCC27651F7E0004F416 /* DailyTableViewCell.xib */; };
 		72780DD1276544570004F416 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72780DD0276544570004F416 /* Temp.swift */; };
+		72DA9C52276658A60013434E /* DateTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA9C51276658A60013434E /* DateTimeFormat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		72780DCB27651F7E0004F416 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		72780DCC27651F7E0004F416 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
 		72780DD0276544570004F416 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		72DA9C51276658A60013434E /* DateTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				72607455275FF16100C3021D /* Views */,
 				72607454275FF12800C3021D /* Models */,
 				72607410275E619E00C3021D /* Secrets.swift */,
+				72DA9C51276658A60013434E /* DateTimeFormat.swift */,
 				72607401275E5FD900C3021D /* Assets.xcassets */,
 				72607406275E5FD900C3021D /* Info.plist */,
 			);
@@ -231,6 +234,7 @@
 				72780DD1276544570004F416 /* Temp.swift in Sources */,
 				72607411275E619E00C3021D /* Secrets.swift in Sources */,
 				72607449275FE7DD00C3021D /* Weather.swift in Sources */,
+				72DA9C52276658A60013434E /* DateTimeFormat.swift in Sources */,
 				726073F9275E5FD600C3021D /* AppDelegate.swift in Sources */,
 				7260745D276049F100C3021D /* WeatherInfoController.swift in Sources */,
 				72780DCD27651F7E0004F416 /* DailyTableViewCell.swift in Sources */,

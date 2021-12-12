@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Gh-me-7Ak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NhH-T9-blg">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Current-->
+        <!--Mostly Sunny-->
         <scene sceneID="O4U-Vk-olG">
             <objects>
                 <viewController id="8Gh-me-7Ak" customClass="CurrentViewController" customModule="MostlySunny" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Awk-3w-10e">
-                                <rect key="frame" x="10" y="10" width="355" height="657"/>
+                                <rect key="frame" x="10" y="54" width="355" height="613"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ERq-zZ-Fjn" userLabel="Enter Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="91"/>
@@ -70,7 +70,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aL-Zb-Bvi">
                                                         <rect key="frame" x="0.0" y="0.0" width="177.5" height="50"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="76"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -95,13 +95,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mZ2-Vr-mPD" userLabel="Middle Stack">
-                                        <rect key="frame" x="0.0" y="218.5" width="355" height="116.5"/>
+                                        <rect key="frame" x="0.0" y="218.5" width="355" height="72.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hy5-tI-nLV" userLabel="Stack View 3">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="116.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="72.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="aTF-Pd-of8">
-                                                        <rect key="frame" x="0.0" y="29" width="118.5" height="59"/>
+                                                        <rect key="frame" x="0.0" y="7" width="118.5" height="59"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="omL-A2-xsp">
                                                                 <rect key="frame" x="0.0" y="0.0" width="118.5" height="19"/>
@@ -123,7 +123,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-zS-teF">
-                                                        <rect key="frame" x="118.5" y="29" width="118" height="59"/>
+                                                        <rect key="frame" x="118.5" y="7" width="118" height="59"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u2P-pf-Vkl" userLabel="Wind">
                                                                 <rect key="frame" x="0.0" y="0.0" width="118" height="21"/>
@@ -145,7 +145,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="i8v-vO-Erz">
-                                                        <rect key="frame" x="236.5" y="29" width="118.5" height="59"/>
+                                                        <rect key="frame" x="236.5" y="7" width="118.5" height="59"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IBV-qP-DFO" userLabel="humidity">
                                                                 <rect key="frame" x="0.0" y="0.0" width="118.5" height="21"/>
@@ -171,7 +171,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ol-SO-pjZ">
-                                        <rect key="frame" x="0.0" y="355" width="355" height="132"/>
+                                        <rect key="frame" x="0.0" y="311" width="355" height="132"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ndA-LY-Bz8">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="33"/>
@@ -199,7 +199,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="O0Y-AZ-sPy">
-                                        <rect key="frame" x="0.0" y="507" width="355" height="150"/>
+                                        <rect key="frame" x="0.0" y="463" width="355" height="150"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quote" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4G-2q-r2d">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="150"/>
@@ -229,11 +229,7 @@
                             <constraint firstItem="arl-hX-1Iu" firstAttribute="top" secondItem="2C3-JI-41J" secondAttribute="top" id="sJf-fv-TWu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Current" image="cloud.sun" catalog="system" id="ZNj-TK-JeD">
-                        <color key="badgeColor" systemColor="tintColor"/>
-                        <imageReference key="selectedImage" image="cloud.sun" catalog="system" symbolScale="large"/>
-                    </tabBarItem>
-                    <navigationItem key="navigationItem" id="XnQ-0W-pH3"/>
+                    <navigationItem key="navigationItem" title="Mostly Sunny" id="XnQ-0W-pH3"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="arl-hX-1Iu" id="Hlr-US-r6z"/>
                         <outlet property="cloudImage" destination="omL-A2-xsp" id="BLf-H9-9Lm"/>
@@ -254,6 +250,28 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rb-pg-ph3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2863.1999999999998" y="-33.733133433283363"/>
+        </scene>
+        <!--Current-->
+        <scene sceneID="1tX-zw-0II">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NhH-T9-blg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Current" image="cloud.sun" catalog="system" id="ZNj-TK-JeD">
+                        <color key="badgeColor" systemColor="tintColor"/>
+                        <imageReference key="selectedImage" image="cloud.sun" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SwS-By-gri">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Gh-me-7Ak" kind="relationship" relationship="rootViewController" id="PwX-37-7jN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HeZ-ou-199" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1924" y="-33.733133433283363"/>
         </scene>
