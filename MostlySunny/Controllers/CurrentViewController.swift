@@ -66,8 +66,6 @@ class CurrentViewController: UIViewController {
           case .success(let weatherInfo):
             self.weatherInfo = weatherInfo
             
-            self.backgroundImageView.image = UIImage(named: weatherInfo.current.weather[0].background)
-            
             let temp = String(format: "%.0f", weatherInfo.current.temp)
             self.currentTempLabel.text = temp + "°"
               
@@ -127,8 +125,10 @@ extension CurrentViewController: UITableViewDataSource {
       
     switch weatherState {
       case .hourly:
+        segmentedTableView.backgroundColor = UIColor.clear
         return weatherInfo.hourly.count
       case .daily:
+        segmentedTableView.backgroundColor = UIColor.clear
         return weatherInfo.daily.count
       }
     }
@@ -143,6 +143,7 @@ extension CurrentViewController: UITableViewDataSource {
         cell.hourlyTempLabel.text = String(format: "%.0f",(weatherInfo!.hourly[indexPath.row].temp)) + "°"
         cell.hourlyImageLabel.image = UIImage(systemName: weatherInfo!.hourly[indexPath.row].weather[0].weatherImage)
         cell.hourlyPopLabel.text = String(format: "%.0f",(weatherInfo!.hourly[indexPath.row].pop)) + "%"
+        cell.backgroundColor = UIColor.clear
         return cell
       }
     } else if weatherState == .daily {
@@ -152,7 +153,7 @@ extension CurrentViewController: UITableViewDataSource {
         cell.dailyHighLabel.text = "High " + String(format: "%0.f",(weatherInfo!.daily[indexPath.row].temp.max)) + "°"
         cell.dailyLowLabel.text = "Low " + String(format: "%.0f",(weatherInfo!.daily[indexPath.row].temp.min)) + "°"
         cell.dailyImage.image = UIImage(systemName: weatherInfo!.daily[indexPath.row].weather[0].weatherImage)
-
+        cell.backgroundColor = UIColor.clear
         return cell
       }
     }
