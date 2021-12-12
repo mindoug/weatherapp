@@ -15,6 +15,7 @@ struct WeatherInfo: Codable {
   var current: Current
   var hourly: [Hourly]
   var daily: [Daily]
+  var alerts: [Alerts]?
   
 }
 

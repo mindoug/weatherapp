@@ -33,6 +33,7 @@ class CurrentViewController: UIViewController {
   @IBOutlet weak var segmentedControl: UISegmentedControl!
   @IBOutlet weak var segmentedTableView: UITableView!
   @IBOutlet weak var backgroundImageView: UIImageView!
+  @IBOutlet weak var alertLabel: UILabel!
   
   let dailyCellID = "DailyCell"
   let hourlyCellID = "HourlyCell"
@@ -83,6 +84,10 @@ class CurrentViewController: UIViewController {
             self.windLabel.text = String(wind) + " mph"
               
             self.humidityLabel.text = String(weatherInfo.current.humidity) + "%"
+            
+            if (weatherInfo.alerts?.count ?? 0) > 0 {
+              self.alertLabel.text = "Alert: From \(weatherInfo.alerts![0].sender): \(weatherInfo.alerts![0].event): \(weatherInfo.alerts![0].description)"
+            }
             
             self.segmentedTableView.reloadData()
 
