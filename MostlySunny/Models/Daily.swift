@@ -12,8 +12,10 @@ struct Daily: Codable {
   
   var sunrise: Int
   var sunset: Int
-  var temp: DailyTemp
+  var temp: Temp
   var weather: [Weather]
   var pop: Double
-
+  var dt: Double
 }
+
+

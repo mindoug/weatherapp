@@ -11,6 +11,7 @@ class CurrentViewController: UIViewController {
   
   var quote = Quote()
   let weatherInfoController = WeatherInfoController()
+  var weatherInfo: WeatherInfo? = nil
   
   var latitude = "33.543682"
   var longitude = "-86.779633"
@@ -29,6 +30,17 @@ class CurrentViewController: UIViewController {
   @IBOutlet weak var humidityImage: UIImageView!
   @IBOutlet weak var humidityLabel: UILabel!
   @IBOutlet weak var quoteLabel: UILabel!
+  @IBOutlet weak var segmentedControl: UISegmentedControl!
+  @IBOutlet weak var segmentedTableView: UITableView!
+  
+  let dailyCellID = "DailyCell"
+  let hourlyCellID = "HourlyCell"
+  
+  enum WeatherState: Int {
+    case hourly, daily
+  }
+  
+  var weatherState: WeatherState = .hourly
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -38,6 +50,12 @@ class CurrentViewController: UIViewController {
   override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+    
+    let dailyNib = UINib(nibName: "DailyTableViewCell", bundle: Bundle.main)
+    let hourlyNib = UINib(nibName: "HourlyTableViewCell", bundle: Bundle.main)
+    segmentedTableView.register(dailyNib, forCellReuseIdentifier: dailyCellID)
+    segmentedTableView.register(hourlyNib, forCellReuseIdentifier: hourlyCellID)
+    
   }
   
   func updateUI() {
@@ -45,6 +63,7 @@ class CurrentViewController: UIViewController {
       DispatchQueue.main.async {
         switch result {
           case .success(let weatherInfo):
+            self.weatherInfo = weatherInfo
             
             let temp = String(format: "%.0f", weatherInfo.current.temp)
             self.currentTempLabel.text = temp + "°"
@@ -63,24 +82,31 @@ class CurrentViewController: UIViewController {
             self.windLabel.text = String(wind) + " mph"
               
             self.humidityLabel.text = String(weatherInfo.current.humidity) + "%"
+            
+            self.segmentedTableView.reloadData()
 
           case .failure(let error):
-            print(error)
+            self.displayError(error)
         }
       }
     })
   }
   
-  func saveWeather() {
-    
-  }
-  
-  func loadWeather() {
-    // load data from the disk and assign it to the weather property
-  }
-  
   func displayError(_ error: Error) {
     print("Fetch WeatherInfo failed with error: \(error)")
+  }
+  
+  @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+    weatherState = WeatherState(rawValue: sender.selectedSegmentIndex) ?? .hourly
+    updateWeatherSelection()
+  }
+  
+  func updateWeatherSelection() {
+    switch weatherState {
+      case .hourly, .daily:
+        segmentedTableView.isHidden = false
+        segmentedTableView.reloadData()
+    }
   }
     
   @IBAction func submitButton(_ sender: Any) {
@@ -88,17 +114,46 @@ class CurrentViewController: UIViewController {
     longitude = longitudeTextField.text ?? "-86.779633"
     updateUI()
   }
-  
-  
-  
-   
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-  
-  
-  
-  
-  
-
 }
+
+extension CurrentViewController: UITableViewDataSource {
+ 
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  
+    if let weatherInfo = weatherInfo {
+      
+    switch weatherState {
+      case .hourly:
+        return weatherInfo.hourly.count
+      case .daily:
+        return weatherInfo.daily.count
+      }
+    }
+    return 0
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    if weatherState == .hourly {
+      if let cell = tableView.dequeueReusableCell(withIdentifier: hourlyCellID, for: indexPath) as?
+          HourlyTableViewCell {
+        cell.hourlyTimeLabel.text = String(weatherInfo!.hourly[indexPath.row].dt)
+        cell.hourlyTempLabel.text = String(format: "%.0f",(weatherInfo!.hourly[indexPath.row].temp)) + "°"
+        cell.hourlyImageLabel.image = UIImage(systemName: weatherInfo!.hourly[indexPath.row].weather[0].weatherImage)
+        cell.hourlyPopLabel.text = String(format: "%.0f",(weatherInfo!.hourly[indexPath.row].pop)) + "%"
+        return cell
+      }
+    } else if weatherState == .daily {
+      if let cell = tableView.dequeueReusableCell(withIdentifier: dailyCellID, for: indexPath) as?
+          DailyTableViewCell {
+        cell.dayLabel.text = String(weatherInfo!.daily[indexPath.row].dt)
+        cell.dailyHighLabel.text = "High " + String(format: "%0.f",(weatherInfo!.daily[indexPath.row].temp.max)) + "°"
+        cell.dailyLowLabel.text = "Low " + String(format: "%.0f",(weatherInfo!.daily[indexPath.row].temp.min)) + "°"
+        cell.dailyImage.image = UIImage(systemName: weatherInfo!.daily[indexPath.row].weather[0].weatherImage)
+
+        return cell
+      }
+    }
+    return UITableViewCell()
+  }
+}
+

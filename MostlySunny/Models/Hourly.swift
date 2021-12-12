@@ -14,10 +14,11 @@ struct Hourly: Codable {
   var weather: [Weather]
   var pop: Double
   var humidity: Int
+  var dt: Double
   
   enum CodingKeys: String, CodingKey {
     case feelsLike = "feels_like"
-    case temp, weather, pop, humidity
+    case temp, weather, pop, humidity, dt
   }
   
 }
