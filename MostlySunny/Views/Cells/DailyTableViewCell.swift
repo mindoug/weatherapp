@@ -13,8 +13,8 @@ class DailyTableViewCell: UITableViewCell {
   @IBOutlet weak var dailyHighLabel: UILabel!
   @IBOutlet weak var dailyLowLabel: UILabel!
   @IBOutlet weak var dailyImage: UIImageView!
-
-
+  @IBOutlet weak var dailyPopLabel: UILabel!
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

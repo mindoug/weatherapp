@@ -71,7 +71,7 @@
                 <outlet property="hourlyTempLabel" destination="vNC-pd-JzC" id="o5O-c5-gBW"/>
                 <outlet property="hourlyTimeLabel" destination="qVR-2f-Ejf" id="prQ-az-G08"/>
             </connections>
-            <point key="canvasLocation" x="138" y="134"/>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </tableViewCell>
     </objects>
     <resources>

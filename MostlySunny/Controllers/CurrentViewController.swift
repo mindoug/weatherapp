@@ -11,6 +11,8 @@ class CurrentViewController: UIViewController {
   
   var quote = Quote()
   let weatherInfoController = WeatherInfoController()
+  var dateTime = DateTimeFormat()
+  
   var weatherInfo: WeatherInfo? = nil
   
   var latitude = "33.543682"
@@ -146,7 +148,9 @@ extension CurrentViewController: UITableViewDataSource {
     if weatherState == .hourly {
       if let cell = tableView.dequeueReusableCell(withIdentifier: hourlyCellID, for: indexPath) as?
           HourlyTableViewCell {
-        cell.hourlyTimeLabel.text = String(weatherInfo!.hourly[indexPath.row].dt)
+        
+        cell.hourlyTimeLabel.text = String(dateTime.getTime(timestamp: weatherInfo!.hourly[indexPath.row].dt))
+        
         cell.hourlyTempLabel.text = String(format: "%.0f",(weatherInfo!.hourly[indexPath.row].temp)) + "°"
         cell.hourlyImageLabel.image = UIImage(systemName: weatherInfo!.hourly[indexPath.row].weather[0].weatherImage)
         cell.hourlyPopLabel.text = String(format: "%.0f",(weatherInfo!.hourly[indexPath.row].pop)) + "%"
@@ -156,10 +160,13 @@ extension CurrentViewController: UITableViewDataSource {
     } else if weatherState == .daily {
       if let cell = tableView.dequeueReusableCell(withIdentifier: dailyCellID, for: indexPath) as?
           DailyTableViewCell {
-        cell.dayLabel.text = String(weatherInfo!.daily[indexPath.row].dt)
+        
+        cell.dayLabel.text = String(dateTime.getDate(timestamp:  weatherInfo!.daily[indexPath.row].dt))
+        
         cell.dailyHighLabel.text = "High " + String(format: "%0.f",(weatherInfo!.daily[indexPath.row].temp.max)) + "°"
         cell.dailyLowLabel.text = "Low " + String(format: "%.0f",(weatherInfo!.daily[indexPath.row].temp.min)) + "°"
         cell.dailyImage.image = UIImage(systemName: weatherInfo!.daily[indexPath.row].weather[0].weatherImage)
+        cell.dailyPopLabel.text = String(format: "%.0f",(weatherInfo!.daily[indexPath.row].pop)) + "%"
         cell.backgroundColor = UIColor.clear
         return cell
       }
