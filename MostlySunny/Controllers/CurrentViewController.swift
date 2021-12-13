@@ -15,7 +15,7 @@ class CurrentViewController: UIViewController {
   
   var weatherInfo: WeatherInfo? = nil
   
-  var location = Location(latitude: "33.543682", longitude: "-86.779633")
+  var location = Location(latitude: "", longitude: "")
   
   var result: String = ""
   
