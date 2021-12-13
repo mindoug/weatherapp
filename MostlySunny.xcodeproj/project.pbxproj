@@ -29,6 +29,8 @@
 		72780DCE27651F7E0004F416 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72780DCC27651F7E0004F416 /* DailyTableViewCell.xib */; };
 		72780DD1276544570004F416 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72780DD0276544570004F416 /* Temp.swift */; };
 		72DA9C52276658A60013434E /* DateTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA9C51276658A60013434E /* DateTimeFormat.swift */; };
+		72DA9C5427669D3B0013434E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA9C5327669D3B0013434E /* Constants.swift */; };
+		72DA9C562766D7F00013434E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA9C552766D7F00013434E /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		72780DCC27651F7E0004F416 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
 		72780DD0276544570004F416 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 		72DA9C51276658A60013434E /* DateTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormat.swift; sourceTree = "<group>"; };
+		72DA9C5327669D3B0013434E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		72DA9C552766D7F00013434E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 				72607452275FEBDA00C3021D /* Alerts.swift */,
 				72607448275FE7DD00C3021D /* Weather.swift */,
 				72607412275E681100C3021D /* Quote.swift */,
+				72DA9C552766D7F00013434E /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			children = (
 				726073F8275E5FD600C3021D /* AppDelegate.swift */,
 				726073FA275E5FD600C3021D /* SceneDelegate.swift */,
+				72DA9C5327669D3B0013434E /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -230,8 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				72607453275FEBDA00C3021D /* Alerts.swift in Sources */,
+				72DA9C5427669D3B0013434E /* Constants.swift in Sources */,
 				72607447275FE73600C3021D /* Current.swift in Sources */,
 				72780DD1276544570004F416 /* Temp.swift in Sources */,
+				72DA9C562766D7F00013434E /* Location.swift in Sources */,
 				72607411275E619E00C3021D /* Secrets.swift in Sources */,
 				72607449275FE7DD00C3021D /* Weather.swift in Sources */,
 				72DA9C52276658A60013434E /* DateTimeFormat.swift in Sources */,

@@ -15,8 +15,8 @@ class CurrentViewController: UIViewController {
   
   var weatherInfo: WeatherInfo? = nil
   
-  var latitude = "33.543682"
-  var longitude = "-86.779633"
+  var location = Location(latitude: "33.543682", longitude: "-86.779633")
+  
   var result: String = ""
   
   @IBOutlet weak var latitudeTextField: UITextField!
@@ -52,17 +52,20 @@ class CurrentViewController: UIViewController {
   
   override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+    location = loadWeatherInfo() ?? Location(latitude: "33.543682", longitude: "-86.779633")
+    
+    updateUI()
     
     let dailyNib = UINib(nibName: "DailyTableViewCell", bundle: Bundle.main)
     let hourlyNib = UINib(nibName: "HourlyTableViewCell", bundle: Bundle.main)
+    
     segmentedTableView.register(dailyNib, forCellReuseIdentifier: dailyCellID)
     segmentedTableView.register(hourlyNib, forCellReuseIdentifier: hourlyCellID)
     
   }
   
   func updateUI() {
-    weatherInfoController.fetchWeatherInfo(lat: latitude, lon: longitude, completion: {(result) in
+    weatherInfoController.fetchWeatherInfo(lat: location.latitude, lon: location.longitude, completion: {(result) in
       DispatchQueue.main.async {
         switch result {
           case .success(let weatherInfo):
@@ -91,6 +94,7 @@ class CurrentViewController: UIViewController {
               self.quoteLabel.textColor = .red
             } else {
               self.quoteLabel.text = self.quote.randomQuote
+              self.quoteLabel.textColor = .black
             }
             
             self.segmentedTableView.reloadData()
@@ -120,9 +124,23 @@ class CurrentViewController: UIViewController {
   }
     
   @IBAction func submitButton(_ sender: Any) {
-    latitude = latitudeTextField.text ?? "33.543682"
-    longitude = longitudeTextField.text ?? "-86.779633"
+   
+    location.latitude = latitudeTextField.text ?? "33.543682"
+    location.longitude = longitudeTextField.text ?? "-86.779633"
     updateUI()
+    saveWeatherInfo(location)
+  }
+  
+  func saveWeatherInfo(_ location: Location) {
+    let propertyListEncoder = PropertyListEncoder()
+    let codedInfo = try? propertyListEncoder.encode(location)
+    try? codedInfo?.write(to: Constants.archiveURL, options: .noFileProtection)
+  }
+  
+  func loadWeatherInfo() -> Location? {
+    guard let codedInfo = try? Data(contentsOf: Constants.archiveURL) else { return nil }
+    let propertyListDecoder = PropertyListDecoder()
+    return try? propertyListDecoder.decode(Location.self, from: codedInfo)
   }
 }
 
