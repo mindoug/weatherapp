@@ -1,0 +1,26 @@
+//
+//  AlertsTableViewCell.swift
+//  MostlySunny
+//
+//  Created by Mindy Douglas on 12/15/21.
+//
+
+import UIKit
+
+class AlertsTableViewCell: UITableViewCell {
+  
+  
+  @IBOutlet weak var alertsLabel: UILabel!
+  
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}

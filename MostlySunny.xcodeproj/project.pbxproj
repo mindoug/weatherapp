@@ -31,6 +31,8 @@
 		72DA9C52276658A60013434E /* DateTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA9C51276658A60013434E /* DateTimeFormat.swift */; };
 		72DA9C5427669D3B0013434E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA9C5327669D3B0013434E /* Constants.swift */; };
 		72DA9C562766D7F00013434E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA9C552766D7F00013434E /* Location.swift */; };
+		72DA9C59276A46BB0013434E /* AlertsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA9C57276A46BB0013434E /* AlertsTableViewCell.swift */; };
+		72DA9C5A276A46BB0013434E /* AlertsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72DA9C58276A46BB0013434E /* AlertsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		72DA9C51276658A60013434E /* DateTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormat.swift; sourceTree = "<group>"; };
 		72DA9C5327669D3B0013434E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		72DA9C552766D7F00013434E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		72DA9C57276A46BB0013434E /* AlertsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsTableViewCell.swift; sourceTree = "<group>"; };
+		72DA9C58276A46BB0013434E /* AlertsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				72780DCC27651F7E0004F416 /* DailyTableViewCell.xib */,
+				72DA9C57276A46BB0013434E /* AlertsTableViewCell.swift */,
+				72DA9C58276A46BB0013434E /* AlertsTableViewCell.xib */,
 				72780DCB27651F7E0004F416 /* DailyTableViewCell.swift */,
 				72780DC627651F2C0004F416 /* HourlyTableViewCell.xib */,
 				72780DC527651F2C0004F416 /* HourlyTableViewCell.swift */,
@@ -222,6 +228,7 @@
 				7260740D275E608B00C3021D /* .gitIgnore in Resources */,
 				72780DC827651F2C0004F416 /* HourlyTableViewCell.xib in Resources */,
 				72607405275E5FD900C3021D /* LaunchScreen.storyboard in Resources */,
+				72DA9C5A276A46BB0013434E /* AlertsTableViewCell.xib in Resources */,
 				72607402275E5FD900C3021D /* Assets.xcassets in Resources */,
 				72607400275E5FD600C3021D /* Main.storyboard in Resources */,
 				72780DCE27651F7E0004F416 /* DailyTableViewCell.xib in Resources */,
@@ -249,6 +256,7 @@
 				72607413275E681100C3021D /* Quote.swift in Sources */,
 				7260744B275FE84000C3021D /* Hourly.swift in Sources */,
 				72607415275E786300C3021D /* WeatherInfo.swift in Sources */,
+				72DA9C59276A46BB0013434E /* AlertsTableViewCell.swift in Sources */,
 				72607441275FB4FD00C3021D /* CurrentViewController.swift in Sources */,
 				726073FB275E5FD600C3021D /* SceneDelegate.swift in Sources */,
 				7260744D275FE9AB00C3021D /* Daily.swift in Sources */,

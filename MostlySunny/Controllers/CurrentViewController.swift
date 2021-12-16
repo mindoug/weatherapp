@@ -38,9 +38,10 @@ class CurrentViewController: UIViewController {
   
   let dailyCellID = "DailyCell"
   let hourlyCellID = "HourlyCell"
+  let alertsCellID = "AlertsCell"
   
   enum WeatherState: Int {
-    case hourly, daily
+    case hourly, daily, alerts
   }
   
   var weatherState: WeatherState = .hourly
@@ -58,9 +59,11 @@ class CurrentViewController: UIViewController {
     
     let dailyNib = UINib(nibName: "DailyTableViewCell", bundle: Bundle.main)
     let hourlyNib = UINib(nibName: "HourlyTableViewCell", bundle: Bundle.main)
+    let alertsNib = UINib(nibName: "AlertsTableViewCell", bundle: Bundle.main)
     
     segmentedTableView.register(dailyNib, forCellReuseIdentifier: dailyCellID)
     segmentedTableView.register(hourlyNib, forCellReuseIdentifier: hourlyCellID)
+    segmentedTableView.register(alertsNib, forCellReuseIdentifier: alertsCellID)
     
   }
   
@@ -88,14 +91,9 @@ class CurrentViewController: UIViewController {
             self.windLabel.text = String(wind) + " mph"
               
             self.humidityLabel.text = String(weatherInfo.current.humidity) + "%"
-            
-            if (weatherInfo.alerts?.count ?? 0) > 0 {
-              self.quoteLabel.text = "Alert: From \(weatherInfo.alerts![0].sender): \(weatherInfo.alerts![0].event): \(weatherInfo.alerts![0].description)"
-              self.quoteLabel.textColor = .red
-            } else {
+          
               self.quoteLabel.text = self.quote.randomQuote
               self.quoteLabel.textColor = .black
-            }
             
             self.segmentedTableView.reloadData()
 
@@ -112,15 +110,8 @@ class CurrentViewController: UIViewController {
   
   @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
     weatherState = WeatherState(rawValue: sender.selectedSegmentIndex) ?? .hourly
-    updateWeatherSelection()
-  }
-  
-  func updateWeatherSelection() {
-    switch weatherState {
-      case .hourly, .daily:
-        segmentedTableView.isHidden = false
-        segmentedTableView.reloadData()
-    }
+    segmentedTableView.isHidden = false
+    segmentedTableView.reloadData()
   }
     
   @IBAction func submitButton(_ sender: Any) {
@@ -150,19 +141,26 @@ extension CurrentViewController: UITableViewDataSource {
   
     if let weatherInfo = weatherInfo {
       
+      segmentedTableView.backgroundColor = UIColor.clear
+      
     switch weatherState {
       case .hourly:
-        segmentedTableView.backgroundColor = UIColor.clear
         return weatherInfo.hourly.count
       case .daily:
-        segmentedTableView.backgroundColor = UIColor.clear
         return weatherInfo.daily.count
+      case .alerts:
+        if (weatherInfo.alerts?.count ?? 0) > 0 {
+          return weatherInfo.alerts!.count
+        } else {
+          return 1
+        }
       }
     }
     return 0
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
     if weatherState == .hourly {
       if let cell = tableView.dequeueReusableCell(withIdentifier: hourlyCellID, for: indexPath) as?
           HourlyTableViewCell {
@@ -175,7 +173,10 @@ extension CurrentViewController: UITableViewDataSource {
         cell.backgroundColor = UIColor.clear
         return cell
       }
-    } else if weatherState == .daily {
+      
+    }
+    
+    if weatherState == .daily {
       if let cell = tableView.dequeueReusableCell(withIdentifier: dailyCellID, for: indexPath) as?
           DailyTableViewCell {
         
@@ -189,7 +190,22 @@ extension CurrentViewController: UITableViewDataSource {
         return cell
       }
     }
-    return UITableViewCell()
+      
+      if weatherState == .alerts {
+        
+
+          if let cell = tableView.dequeueReusableCell(withIdentifier: alertsCellID, for: indexPath) as?
+              AlertsTableViewCell {
+            if weatherInfo?.alerts?.count ?? 0 <= 0  {
+              cell.alertsLabel.text = "No current weather alerts"
+            } else {
+              cell.alertsLabel.text = "Alert: From \(String(describing: weatherInfo!.alerts![indexPath.row].sender)): \(weatherInfo!.alerts![indexPath.row].event) \(weatherInfo!.alerts![indexPath.row].description)"
+       
+            }
+     cell.backgroundColor = UIColor.clear
+     return cell
+          }
+      }
+            return UITableViewCell()
   }
 }
-
