@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="arl-hX-1Iu">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sunrise1" translatesAutoresizingMaskIntoConstraints="NO" id="arl-hX-1Iu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Awk-3w-10e">
                                 <rect key="frame" x="10" y="98" width="394" height="764"/>
@@ -189,7 +189,7 @@
                                             </segmentedControl>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="32" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w2S-gg-Wqi">
                                                 <rect key="frame" x="0.0" y="32" width="394" height="100"/>
-                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="AC9-u4-aem" userLabel="height =120"/>
                                                 </constraints>
@@ -252,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rb-pg-ph3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2863.1999999999998" y="-33.733133433283363"/>
+            <point key="canvasLocation" x="2862.3188405797105" y="-34.151785714285715"/>
         </scene>
         <!--Current-->
         <scene sceneID="1tX-zw-0II">
@@ -281,8 +281,8 @@
         <image name="cloud" catalog="system" width="128" height="88"/>
         <image name="cloud.sun" catalog="system" width="128" height="95"/>
         <image name="humidity" catalog="system" width="128" height="98"/>
-        <image name="sky" width="1783" height="3858"/>
         <image name="sun.max" catalog="system" width="128" height="124"/>
+        <image name="sunrise1" width="1783" height="3858"/>
         <image name="wind" catalog="system" width="128" height="103"/>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
