@@ -64,6 +64,10 @@ class CurrentViewController: UIViewController {
     segmentedTableView.register(dailyNib, forCellReuseIdentifier: dailyCellID)
     segmentedTableView.register(hourlyNib, forCellReuseIdentifier: hourlyCellID)
     segmentedTableView.register(alertsNib, forCellReuseIdentifier: alertsCellID)
+    segmentedTableView.estimatedRowHeight = 44.0
+    segmentedTableView.rowHeight = UITableView.automaticDimension
+    
+    
     
   }
   
